@@ -1,0 +1,19 @@
+- name: Установка обновлений
+  ansible.builtin.apt:
+    name: "*"
+    state: latest
+    update_cache: true
+    cache_valid_time: 3600
+
+- name: Установка базовых пакетов
+  ansible.builtin.apt:
+    name:
+      - docker.io
+      - docker-compose
+      - cron
+
+- name: Запуск и включение Docker
+  ansible.builtin.service:
+    name: docker
+    state: started
+    enabled: true

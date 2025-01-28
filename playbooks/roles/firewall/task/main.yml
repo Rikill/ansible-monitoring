@@ -1,0 +1,10 @@
+- name: Configure firewall for monitoring
+  template:
+    src: "{{ 'monitoring_rules.j2' if 'monitoring' in group_names else 'target_rules.j2' }}"
+    dest: /etc/iptables/rules.v4
+  notify: Reload firewall
+
+- meta: flush_handlers
+
+- name: Persist iptables rules
+  shell: iptables-save > /etc/iptables/rules.v4

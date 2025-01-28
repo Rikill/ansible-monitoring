@@ -1,0 +1,13 @@
+# Docker образы
+grafana_image: grafana/grafana:latest
+prometheus_image: prom/prometheus:latest
+alertmanager_image: prom/alertmanager:latest
+
+# Порта
+grafana_port: 3000
+prometheus_port: 9090
+alertmanager_port: 9093
+node_exporter_port: 9100
+
+# IP целевого сервера
+target_server_ip: 192.168.1.200

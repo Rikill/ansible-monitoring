@@ -1,0 +1,5 @@
+- hosts: target
+  roles:
+    - common
+    - firewall
+    - node_exporter

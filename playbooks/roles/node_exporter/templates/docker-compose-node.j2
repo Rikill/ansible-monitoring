@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  node-exporter:
+    image: prom/node-exporter:latest
+    ports:
+      - "{{ node_exporter_port }}:9100"
+    restart: always

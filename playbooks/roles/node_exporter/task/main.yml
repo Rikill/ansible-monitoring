@@ -1,0 +1,9 @@
+- name: Deploy Node Exporter
+  template:
+    src: docker-compose-node.yml.j2
+    dest: /opt/node_exporter/docker-compose.yml
+
+- name: Start service
+  command: docker-compose up -d
+  args:
+    chdir: /opt/node_exporter
